@@ -1,4 +1,4 @@
-let count = 0;
+let count = 1;
 const src="https://www.takushoku-u.ac.jp/summary/images/summary_successive-chancellor_img_"
 let mainElement = document.querySelector("div.main>img");
 let thumbnailsElement = document.querySelector("div.thumbnails");
@@ -62,8 +62,8 @@ function stop(){
 }
 function reset(){
   stop();
-  thumbnailsElement.children[count].classList.remove("selected");
-  count = MIN;
+  thumbnailsElement.children[count-1].classList.remove("selected");
+  count = 1;
   url = src +"0"+ count +".jpg";
   mainElement.setAttribute('src',url);
   thumbnailsElement.children[count-1].classList.add("selected");
